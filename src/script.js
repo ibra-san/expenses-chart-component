@@ -14,7 +14,31 @@ const spendingFri = document.getElementById("square__price__5");
 const spendingSat = document.getElementById("square__price__6");
 const spendingSun = document.getElementById("square__price__7");
 
+const days = ["sun","mon","tue", "wed", "thu", "fri" , "sat" ]; 
 
+let checktoday = (day) => { 
+    if (day === "sun") { 
+        sunChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    } else if (day === "mon") { 
+        monChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    } else if (day === "tue") { 
+        tueChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    } else if (day === "wed") { 
+        wedChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    } else if (day === "thu") { 
+        thuChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    } else if (day === "fri") { 
+        friChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    } else { 
+        satChart.style.backgroundColor ="hsl(186, 34%, 60%)";
+    }
+}
+
+setInterval (()=> { 
+    let d = new Date(); 
+    let dayName = days[d.getDay()];
+    checktoday(dayName);
+}, 5000) // Repeats every hour
 
 /* For devices with mouse or a pointing device */
 

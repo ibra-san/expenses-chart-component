@@ -132,6 +132,32 @@ var spendingThu = document.getElementById("square__price__4");
 var spendingFri = document.getElementById("square__price__5");
 var spendingSat = document.getElementById("square__price__6");
 var spendingSun = document.getElementById("square__price__7");
+var days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+
+var checktoday = function checktoday(day) {
+  if (day === "sun") {
+    sunChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  } else if (day === "mon") {
+    monChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  } else if (day === "tue") {
+    tueChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  } else if (day === "wed") {
+    wedChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  } else if (day === "thu") {
+    thuChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  } else if (day === "fri") {
+    friChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  } else {
+    satChart.style.backgroundColor = "hsl(186, 34%, 60%)";
+  }
+};
+
+setInterval(function () {
+  var d = new Date();
+  var dayName = days[d.getDay()];
+  checktoday(dayName);
+}, 5000); // Repeats every hour
+
 /* For devices with mouse or a pointing device */
 
 monChart.addEventListener("mouseover", function () {
