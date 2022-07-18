@@ -107,7 +107,7 @@ body {
 .chart__chart--day span {
   border-radius: 5px;
   background-color: hsl(10deg, 79%, 65%);
-  height: 70%;
+  height: 50%;
   width: 85%;
 }
 .chart__chart--day span:hover {
@@ -136,6 +136,7 @@ body {
   padding: 15% 20%;
   color: white;
   border-radius: 5px;
+  display: none;
 }
 
 .total__text {

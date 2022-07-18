@@ -155,7 +155,7 @@ body {
 
                 background-color: $--soft-red;
 
-                height: 70%;
+                height: 50%;
                 width: 85%;
                 
 
@@ -206,11 +206,15 @@ body {
     color: white;
 
     border-radius: 5px;
+
+    display: none;
 }
 
 .total { 
     &__text { 
         color: rgba(128, 128, 128, 0.747);
+
+
 
         font-size: 12px;
     } 
