@@ -26,6 +26,7 @@
 /*Variables*/
 
 $--soft-red: hsl(10, 79%, 65%); 
+$--very-soft-red: hsla(10, 79%, 65%, 0.651); 
 $--cyan: hsl(186, 34%, 60%); 
 $--dark-brown: hsl(25, 47%, 15%); 
 $--medium-brown: hsl(28, 10%, 53%); 
@@ -54,6 +55,8 @@ html {
 }
 
 body { 
+
+    
     width: 400px;
     height: 500px;
     
@@ -76,6 +79,8 @@ body {
     background-color: $--soft-red;
     color: white;
 
+
+
     &__card { 
 
         display: flex;
@@ -86,7 +91,7 @@ body {
         &--text { 
             font-size: 14px;
 
-            color: rgba(255, 255, 255, 0.80);
+            color: $--cream
         }
 
         &--number { 
@@ -97,6 +102,121 @@ body {
 
     &__logo { 
         width: 50px;
+    }
+}
+
+.chart { 
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    background-color: rgba(255, 255, 255, 0.863);   
+    
+    padding: 20px 25px;
+
+    &__header { 
+        font-size: 25px;
+    }
+
+    &__chart { 
+        border-bottom: 1px solid $--cream;
+
+        padding-bottom: 20px;
+
+        display: flex;
+        justify-content: space-between;
+
+        list-style: none;
+
+        height: 200px;
+
+        gap: 10px;
+
+        &--day{ 
+            display: flex;
+            flex-direction: column-reverse ;
+            align-items: center;
+
+            
+            
+            height: 100%;
+            width: 15%;
+            gap: 10px;
+
+            color: rgba(128, 128, 128, 0.788);
+            font-size: 12px;
+
+           
+
+            span { 
+                border-radius: 5px;
+
+                background-color: $--soft-red;
+
+                height: 70%;
+                width: 85%;
+                
+
+                &:hover { 
+                    cursor: pointer;
+                    background-color: $--very-soft-red;
+                }
+                
+            }
+        }
+    }
+
+    &__summary { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin-top: 10px;
+        padding: 10px;
+
+        &--percent { 
+           
+
+            &--percent { 
+                text-align: right;
+
+                font-weight: $--heavyfont;
+                font-size: 14px;
+                
+            }
+
+            &--text { 
+                color: rgba(128, 128, 128, 0.800);
+                font-size: 12px;
+            }
+        }
+
+        
+    }
+}
+
+.square__price { 
+    
+    background-color: $--dark-brown;
+
+    padding: 15% 20%;
+
+    color: white;
+
+    border-radius: 5px;
+}
+
+.total { 
+    &__text { 
+        color: rgba(128, 128, 128, 0.747);
+
+        font-size: 12px;
+    } 
+
+    &__amount { 
+        font-size: 30px;
     }
 }
 
