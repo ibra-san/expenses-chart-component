@@ -1,0 +1,104 @@
+/*Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital@0;1&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Fraunces:opsz,wght@9..144,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lustria&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*Font familys */
+/*
+    font-family: 'Arvo', serif;
+    font-family: 'Baskervville', serif;
+    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fraunces', serif;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Lustria', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Overpass', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Prompt', sans-serif;
+    font-family: 'Questrial', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Unna', serif;
+*/
+/*Variables*/
+
+$--soft-red: hsl(10, 79%, 65%); 
+$--cyan: hsl(186, 34%, 60%); 
+$--dark-brown: hsl(25, 47%, 15%); 
+$--medium-brown: hsl(28, 10%, 53%); 
+$--cream: hsl(27, 66%, 92%); 
+$--very-pale-orange: hsl(33, 100%, 93%);
+$--body-font-size: 18px; 
+$--lightfont: 400; 
+$--heavyfont: 700;
+
+* { 
+    padding: 0;
+    margin: 0;
+}
+
+html { 
+    background-color: $--very-pale-orange;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+body { 
+    width: 400px;
+    height: 500px;
+    
+    @media only screen and (max-width: 400px) {
+        width: 360px;
+        height: 500px;
+    }
+}
+
+.balance { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    border-radius: 10px;
+
+    padding: 15px 20px;
+
+    background-color: $--soft-red;
+    color: white;
+
+    &__card { 
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 7px;
+
+        &--text { 
+            font-size: 14px;
+
+            color: rgba(255, 255, 255, 0.80);
+        }
+
+        &--number { 
+            font-size: 25px;
+            font-weight: $--heavyfont;
+        }
+    }
+
+    &__logo { 
+        width: 50px;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

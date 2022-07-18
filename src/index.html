@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/main.scss">
+    <title>Document</title>
+</head>
+<body>
+    <div class="balance">
+        <div class="balance__card">
+            <p class="balance__card--text">My balance</p>
+            <p class="balance__card--number">$921.48</p>
+        </div>
+        <img src="images/logo.svg" alt="logo" class="balance__logo">
+    </div>
+
+    <div class="chart">
+        <h1 class="chart__header">Spending - Last 7 days</h1>
+        <ul class="chart__chart">
+            <li class="chart__chart--day"><span class="squar" id="square__mon"></span>mon</li>
+            <li class="chart__chart--day"><span class="squar" id="square__tue"></span>tue</li>
+            <li class="chart__chart--day"><span class="squar" id="square__wed"></span>wed</li>
+            <li class="chart__chart--day"><span class="squar" id="square__thur"></span>thu</li>
+            <li class="chart__chart--day"><span class="squar" id="square__fri"></span>fri</li>
+            <li class="chart__chart--day"><span class="squar" id="square__sat"></span>sat</li>
+            <li class="chart__chart--day"><span class="squar" id="square__sun"></span>sun</li>
+
+        </ul>
+        <section class="chart__summary">
+
+           <section class="chart__summary--total">
+            <p class="total__text">Total this month</p>
+            <h1 class="total__amount">$478.33</h1>
+           </section>
+
+           <section class="chart__summary--percent">
+            <h6 class="percent__percent">+2.4%</h6>
+            <p class="percent__text">from last month</p>
+           </section>
+
+
+        </section>
+    </div>
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+    </div>
+</body>
+</html>
