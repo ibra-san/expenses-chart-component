@@ -16,7 +16,10 @@ const spendingSun = document.getElementById("square__price__7");
 
 const days = ["sun","mon","tue", "wed", "thu", "fri" , "sat" ]; 
 
-let checktoday = (day) => { 
+let checktoday = () => { 
+    let d = new Date(); 
+    let day = days[d.getDay()];
+    console.log(day);
     if (day === "sun") { 
         sunChart.style.backgroundColor ="hsl(186, 34%, 60%)";
     } else if (day === "mon") { 
@@ -34,11 +37,10 @@ let checktoday = (day) => {
     }
 }
 
+checktoday()
 setInterval (()=> { 
-    let d = new Date(); 
-    let dayName = days[d.getDay()];
-    checktoday(dayName);
-}, 5000) // Repeats every hour
+    checktoday()
+}, 600000) // Repeats every 10 mins
 
 /* For devices with mouse or a pointing device */
 

@@ -134,7 +134,11 @@ var spendingSat = document.getElementById("square__price__6");
 var spendingSun = document.getElementById("square__price__7");
 var days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 
-var checktoday = function checktoday(day) {
+var checktoday = function checktoday() {
+  var d = new Date();
+  var day = days[d.getDay()];
+  console.log(day);
+
   if (day === "sun") {
     sunChart.style.backgroundColor = "hsl(186, 34%, 60%)";
   } else if (day === "mon") {
@@ -152,11 +156,10 @@ var checktoday = function checktoday(day) {
   }
 };
 
+checktoday();
 setInterval(function () {
-  var d = new Date();
-  var dayName = days[d.getDay()];
-  checktoday(dayName);
-}, 5000); // Repeats every hour
+  checktoday();
+}, 600000); // Repeats every 10 mins
 
 /* For devices with mouse or a pointing device */
 
@@ -295,7 +298,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56623" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37455" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
