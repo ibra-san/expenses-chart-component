@@ -137,7 +137,6 @@ var days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 var checktoday = function checktoday() {
   var d = new Date();
   var day = days[d.getDay()];
-  console.log(day);
 
   if (day === "sun") {
     sunChart.style.backgroundColor = "hsl(186, 34%, 60%)";
@@ -165,49 +164,42 @@ setInterval(function () {
 
 monChart.addEventListener("mouseover", function () {
   spendingMon.style.display = "block";
-  spendingMon.innerText = "$17.45";
 });
 monChart.addEventListener("mouseout", function () {
   spendingMon.style.display = "none";
 });
 tueChart.addEventListener("mouseover", function () {
   spendingTue.style.display = "block";
-  spendingTue.innerText = "$34.91";
 });
 tueChart.addEventListener("mouseout", function () {
   spendingTue.style.display = "none";
 });
 wedChart.addEventListener("mouseover", function () {
   spendingWed.style.display = "block";
-  spendingWed.innerText = "$52.36";
 });
 wedChart.addEventListener("mouseout", function () {
   spendingWed.style.display = "none";
 });
 thuChart.addEventListener("mouseover", function () {
   spendingThu.style.display = "block";
-  spendingThu.innerText = "$31.07";
 });
 thuChart.addEventListener("mouseout", function () {
   spendingThu.style.display = "none";
 });
 friChart.addEventListener("mouseover", function () {
   spendingFri.style.display = "block";
-  spendingFri.innerText = "$23.39";
 });
 friChart.addEventListener("mouseout", function () {
   spendingFri.style.display = "none";
 });
 satChart.addEventListener("mouseover", function () {
   spendingSat.style.display = "block";
-  spendingSat.innerText = "$43.28";
 });
 satChart.addEventListener("mouseout", function () {
   spendingSat.style.display = "none";
 });
 sunChart.addEventListener("mouseover", function () {
   spendingSun.style.display = "block";
-  spendingSun.innerText = "$25.48";
 });
 sunChart.addEventListener("mouseout", function () {
   spendingSun.style.display = "none";
@@ -216,7 +208,6 @@ sunChart.addEventListener("mouseout", function () {
 
 monChart.addEventListener("click", function () {
   spendingMon.style.display = "block";
-  spendingMon.innerText = "17.45";
   spendingTue.style.display = "none";
   spendingWed.style.display = "none";
   spendingThu.style.display = "none";
@@ -286,51 +277,49 @@ function processdata(data) {
   var sum = 0;
   data.forEach(function (obj) {
     sum += obj.amount;
-    console.log(sum);
   });
   return sum;
 }
 
-function setHeight(data, sum) {
+function setHeight(data) {
   data.forEach(function (obj) {
     if (obj.day === "mon") {
-      var newH = obj.amount / sum * 100;
+      var newH = obj.amount;
       monChart.style.height = "".concat(newH, "%");
+      spendingMon.innerText = "$" + "".concat(newH);
     } else if (obj.day === "tue") {
-      var _newH = obj.amount / sum * 100;
-
+      var _newH = obj.amount;
       tueChart.style.height = "".concat(_newH, "%");
+      spendingTue.innerText = "$" + "".concat(_newH);
     } else if (obj.day === "wed") {
-      var _newH2 = obj.amount / sum * 100;
-
+      var _newH2 = obj.amount;
       wedChart.style.height = "".concat(_newH2, "%");
+      spendingWed.innerText = "$" + "".concat(_newH2);
     } else if (obj.day === "thu") {
-      var _newH3 = obj.amount / sum * 100;
-
+      var _newH3 = obj.amount;
       thuChart.style.height = "".concat(_newH3, "%");
+      spendingThu.innerText = "$" + "".concat(_newH3);
     } else if (obj.day === "fri") {
-      var _newH4 = obj.amount / sum * 100;
-
+      var _newH4 = obj.amount;
       friChart.style.height = "".concat(_newH4, "%");
+      spendingFri.innerText = "$" + "".concat(_newH4);
     } else if (obj.day === "sat") {
-      var _newH5 = obj.amount / sum * 100;
-
+      var _newH5 = obj.amount;
       satChart.style.height = "".concat(_newH5, "%");
+      spendingSat.innerText = "$" + "".concat(_newH5);
     } else if (obj.day === "sun") {
-      var _newH6 = obj.amount / sum * 100;
-
+      var _newH6 = obj.amount;
       sunChart.style.height = "".concat(_newH6, "%");
+      spendingSun.innerText = "$" + "".concat(_newH6);
     }
   });
 }
 
-fetch("../data.json").then(function (response) {
+fetch("data.json").then(function (response) {
   return response.json();
 }).then(function (obj) {
-  console.log(obj);
   totalSum = processdata(obj);
-  console.log(totalSum);
-  setHeight(obj, totalSum);
+  setHeight(obj);
 }).catch(function (error) {
   console.error("Something went wrong with fetching data");
   console.error(error);
@@ -363,7 +352,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55161" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61475" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

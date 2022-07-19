@@ -19,7 +19,6 @@ const days = ["sun","mon","tue", "wed", "thu", "fri" , "sat" ];
 let checktoday = () => { 
     let d = new Date(); 
     let day = days[d.getDay()];
-    console.log(day);
     if (day === "sun") { 
         sunChart.style.backgroundColor ="hsl(186, 34%, 60%)";
     } else if (day === "mon") { 
@@ -46,7 +45,7 @@ setInterval (()=> {
 
 monChart.addEventListener("mouseover", ()=> { 
     spendingMon.style.display="block";
-    spendingMon.innerText="$17.45";
+    
 })
 monChart.addEventListener("mouseout", ()=> { 
     spendingMon.style.display="none";
@@ -56,7 +55,7 @@ monChart.addEventListener("mouseout", ()=> {
 
 tueChart.addEventListener("mouseover", ()=> { 
     spendingTue.style.display="block";
-    spendingTue.innerText="$34.91";
+    
 })
 tueChart.addEventListener("mouseout", ()=> { 
     spendingTue.style.display="none";
@@ -66,7 +65,7 @@ tueChart.addEventListener("mouseout", ()=> {
 
 wedChart.addEventListener("mouseover", ()=> { 
     spendingWed.style.display="block";
-    spendingWed.innerText="$52.36";
+    
 })
 wedChart.addEventListener("mouseout", ()=> { 
     spendingWed.style.display="none";
@@ -76,7 +75,7 @@ wedChart.addEventListener("mouseout", ()=> {
 
 thuChart.addEventListener("mouseover", ()=> { 
     spendingThu.style.display="block";
-    spendingThu.innerText="$31.07";
+    
 })
 thuChart.addEventListener("mouseout", ()=> { 
     spendingThu.style.display="none";
@@ -85,7 +84,7 @@ thuChart.addEventListener("mouseout", ()=> {
 
 friChart.addEventListener("mouseover", ()=> { 
     spendingFri.style.display="block";
-    spendingFri.innerText="$23.39";
+    
 })
 friChart.addEventListener("mouseout", ()=> { 
     spendingFri.style.display="none";
@@ -94,7 +93,7 @@ friChart.addEventListener("mouseout", ()=> {
 
 satChart.addEventListener("mouseover", ()=> { 
     spendingSat.style.display="block";
-    spendingSat.innerText="$43.28";
+    
 })
 satChart.addEventListener("mouseout", ()=> { 
     spendingSat.style.display="none";
@@ -103,7 +102,7 @@ satChart.addEventListener("mouseout", ()=> {
 
 sunChart.addEventListener("mouseover", ()=> { 
     spendingSun.style.display="block";
-    spendingSun.innerText="$25.48";
+    
 })
 sunChart.addEventListener("mouseout", ()=> { 
     spendingSun.style.display="none";
@@ -113,7 +112,7 @@ sunChart.addEventListener("mouseout", ()=> {
 
 monChart.addEventListener("click", ()=> { 
     spendingMon.style.display="block";
-    spendingMon.innerText="17.45";
+
     spendingTue.style.display="none";
     spendingWed.style.display="none";
     spendingThu.style.display="none";
@@ -125,6 +124,7 @@ monChart.addEventListener("click", ()=> {
 tueChart.addEventListener("click", ()=> { 
     spendingMon.style.display="none";
     spendingTue.style.display="block";
+
     spendingWed.style.display="none";
     spendingThu.style.display="none";
     spendingFri.style.display="none";
@@ -136,6 +136,7 @@ wedChart.addEventListener("click", ()=> {
     spendingMon.style.display="none";
     spendingTue.style.display="none";
     spendingWed.style.display="block";
+
     spendingThu.style.display="none";
     spendingFri.style.display="none";
     spendingSat.style.display="none";
@@ -147,6 +148,7 @@ thuChart.addEventListener("click", ()=> {
     spendingTue.style.display="none";
     spendingWed.style.display="none";
     spendingThu.style.display="block";
+
     spendingFri.style.display="none";
     spendingSat.style.display="none";
     spendingSun.style.display="none";
@@ -159,6 +161,7 @@ friChart.addEventListener("click", ()=> {
     spendingWed.style.display="none";
     spendingThu.style.display="none";
     spendingFri.style.display="block";
+
     spendingSat.style.display="none";
     spendingSun.style.display="none";
 })
@@ -170,6 +173,7 @@ satChart.addEventListener("click", ()=> {
     spendingThu.style.display="none";
     spendingFri.style.display="none";
     spendingSat.style.display="block";
+
     spendingSun.style.display="none";
 })
 
@@ -181,6 +185,7 @@ sunChart.addEventListener("click", ()=> {
     spendingFri.style.display="none";
     spendingSat.style.display="none";
     spendingSun.style.display="block";
+
 })
 
 
@@ -191,7 +196,7 @@ function processdata (data) {
     let sum = 0; 
     data.forEach((obj) => { 
         sum += obj.amount; 
-        console.log(sum);
+        
     })
     return sum
 }
@@ -200,37 +205,45 @@ function setHeight (data) {
     data.forEach((obj) => { 
         if (obj.day === "mon") { 
             let newH = obj.amount;
-            monChart.style.height = `${newH}%`; 
+            monChart.style.height = `${newH}%`;
+            spendingMon.innerText="$"+`${newH}`; 
         } else if (obj.day === "tue") { 
             let newH = obj.amount;
             tueChart.style.height = `${newH}%`; 
+            spendingTue.innerText="$"+`${newH}`; 
         } else if (obj.day === "wed") { 
             let newH = obj.amount;
             wedChart.style.height = `${newH}%`; 
+            spendingWed.innerText="$"+`${newH}`; 
         } else if (obj.day === "thu") { 
             let newH = obj.amount;
             thuChart.style.height = `${newH}%`; 
+            spendingThu.innerText="$"+`${newH}`; 
         } else if (obj.day === "fri") { 
             let newH = obj.amount;
             friChart.style.height = `${newH}%`; 
+            spendingFri.innerText="$"+`${newH}`; 
         } else if (obj.day === "sat") { 
             let newH = obj.amount;
             satChart.style.height = `${newH}%`; 
+            spendingSat.innerText="$"+`${newH}`; 
         } else if (obj.day === "sun") { 
             let newH = obj.amount;
-            sunChart.style.height = `${newH}%`; 
+            sunChart.style.height = `${newH}%`;
+            spendingSun.innerText="$"+`${newH}`;  
         }
     })
 }
 
-fetch("../data.json")
+
+fetch("data.json")
     .then((response) => { 
         return response.json();
     })
     .then((obj) => { 
-        console.log(obj);
+        
        totalSum = processdata(obj);
-       console.log(totalSum)
+       
        setHeight(obj)
         
     })
